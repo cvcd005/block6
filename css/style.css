@@ -1,0 +1,147 @@
+/*style from block4*/
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+@font-face {
+    font-family: "TT Lakes";
+    src: url("../fonts/TTLakes-Regular.woff") format("woff");
+}
+body{
+  font-family:"TT Lakes", sans-serif;
+  line-height:20px;
+  font-size: 14px;
+  padding:0;
+  margin:0;
+  background:#F8F8F8;
+  color:#1B1C21;
+}
+.btn{
+  background-color:transparent;
+  border:none;
+  cursor:pointer;
+  margin:0;/*нет в блоке 4*/
+  padding:0;/*нет в блоке 4*/
+}
+.btn-moreRead{
+  font-size:16px;
+  line-height: 24px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.moreRead-icon{
+  display:inline-block;
+  background-image:url("../img/big.svg");
+  background-repeat: no-repeat;
+  background-position:center;
+  margin-right:10px;
+  width:1em;
+  height:1em;
+}
+
+
+
+/*style new*/
+.repairs{
+  width: 1120px;
+  margin:0 auto;
+}
+.repairs-header{
+  background: -webkit-gradient(linear, right top, left top, from(#F8F8F8), color-stop(98.61%, #FFFFFF));
+  background: -o-linear-gradient(right, #F8F8F8 0%, #FFFFFF 98.61%);
+  background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #7E7E82;
+  height:55px;
+  padding-left:16px;
+  padding-top:16px;
+}
+.repairs-list{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:25px;
+  align-content:space-around;
+}
+.repairs-brands{
+  width:240px;
+  height:72px;
+  background: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  margin-bottom:16px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left:16px;
+  margin-left:16px;
+}
+.light-circle{
+  width:40px;
+  height:40px;
+  vertical-align:middle;
+  border-radius:50%;
+  display:inline-block;
+  border: 2px solid #FF3E79;
+  background-image:url("../img/arrow.svg");
+  background-position:center;
+  background-repeat: no-repeat;
+  margin-right:16px;
+}
+.moreRead-margin{
+  margin-left:16px;
+}
+.end{
+  display:none;
+}
+.smallRead-icon{
+  display:inline-block;
+  background-image:url("../img/small.svg");
+  background-repeat: no-repeat;
+  background-position:center;
+  margin-right:10px;
+  width:1em;
+  height:1em;
+}
+.repairs-brands:not(:nth-child(-n+8)){/*показываем первые 8 ссылок*/
+    display:none;
+}
+
+
+@media screen and  (max-width: 768px)/*(max-width: 320px) */ {
+  .repairs-brands:not(:nth-child(-n+2)){/*показываем первые 8 ссылок*/
+    display:none;
+  }
+  .repairs{
+    margin:0 auto;
+    width:320px;
+  }
+  .repairs-header{
+    width:90%;
+    height:70px;
+  }
+  .repairs-brands{
+    width:90%;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1120px) {
+  .repairs-brands:not(:nth-child(-n+6)){/*показываем первые 8 ссылок*/
+    display:none;
+  }
+  .repairs{
+    margin:0;
+    width:100%;
+  }
+  .repairs-header{
+    width:90%;
+    height:70px;
+  }
+  .repairs-brands{
+    width:30%;
+  }
+}
