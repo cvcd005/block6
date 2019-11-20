@@ -1,34 +1,29 @@
-const openMoreRead = (sectionName) => {
+const moreRead = (sectionName) => {
 	let section = document.querySelector(sectionName);
 	let list = section.querySelectorAll('.repairs-brands');
-	for(let i=0, l=list.length; i<l; i++){
-		list[i].style.display='flex';
+	let button = section.querySelector('.btn-moreRead');
+	let wrap = document.querySelector('.repairs-list-wrap');
+	wrap.classList.toggle('heightoverflow');
+
+	const changeButton = (btn, btnRemove, btnAdd, spanText, divRemove, divAdd) => {
+		btn.classList.remove(btnRemove);
+		btn.classList.add(btnAdd);
+		let span = btn.querySelector('span');
+		span.textContent=spanText;
+		let div = btn.querySelector('div');
+		div.classList.remove(divRemove);
+		div.classList.add(divAdd);
+		return btn;
 	}
-	let button = section.querySelector('.first');
-	button.style.display="none";
-	let newButton =  section.querySelector('.end');
-	newButton.style.display='block';
+
+	if(button.classList.contains('canBig')){
+		changeButton(button, 'canBig', 'canSmall', 'Свернуть',  'moreRead-icon', 'smallRead-icon');
+	} else if(button.classList.contains('canSmall')){
+		changeButton(button, 'canSmall', 'canBig', 'Показать все', 'smallRead-icon', 'moreRead-icon');
+	}
 }
 
-const closeMoreRead = (sectionName) => {
-	let section = document.querySelector(sectionName);
-	const rep = (index) => {
-		for(let i=index, l=list.length; i<l; i++){
-		list[i].style.display='none';
-		}
-	}
-	let list = section.querySelectorAll('.repairs-brands');
-	if(window.matchMedia('screen and (min-width: 1120px)').matches) {
- 		rep(8);
-	} else if(window.matchMedia('screen and (min-width: 768px)').matches) {
-  	rep(6);
-	} else {
-		rep(2);
-	}
-	let button = section.querySelector('.first');
-	button.style.display="block";
-	let newButton =  section.querySelector('.end');
-	newButton.style.display='none';
-}
-
-
+const but = document.querySelector('.btn-moreRead');
+but.addEventListener('click', function(){
+	moreRead('.repairs');
+});

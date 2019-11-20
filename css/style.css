@@ -60,6 +60,12 @@ body{
   padding-left:16px;
   padding-top:16px;
 }
+.repairs-list-wrap{
+}
+.heightoverflow{
+  height:200px;
+  overflow-y: hidden;
+}
 .repairs-list{
   display:flex;
   flex-wrap:wrap;
@@ -94,9 +100,6 @@ body{
 .moreRead-margin{
   margin-left:16px;
 }
-.end{
-  display:none;
-}
 .smallRead-icon{
   display:inline-block;
   background-image:url("../img/small.svg");
@@ -106,15 +109,11 @@ body{
   width:1em;
   height:1em;
 }
-.repairs-brands:not(:nth-child(-n+8)){/*показываем первые 8 ссылок*/
-    display:none;
+.top-border{
+  border-top:1px solid #D9FFF5;
 }
 
-
-@media screen and  (max-width: 768px)/*(max-width: 320px) */ {
-  .repairs-brands:not(:nth-child(-n+2)){/*показываем первые 8 ссылок*/
-    display:none;
-  }
+@media screen and  (max-width: 650px){
   .repairs{
     margin:0 auto;
     width:320px;
@@ -128,11 +127,7 @@ body{
   }
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 1120px) {
-  .repairs-brands:not(:nth-child(-n+6)){/*показываем первые 8 ссылок*/
-    display:none;
-  }
+@media screen and (min-width: 651px) and (max-width: 1120px) {
   .repairs{
     margin:0;
     width:100%;
